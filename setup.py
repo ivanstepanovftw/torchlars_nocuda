@@ -1,5 +1,5 @@
-from setuptools import setup
-from torch.utils.cpp_extension import BuildExtension, Extension
+from setuptools import setup, Extension
+from torch.utils.cpp_extension import BuildExtension
 
 about = {}
 with open('torchlars/__version__.py') as f:
