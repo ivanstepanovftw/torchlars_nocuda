@@ -22,7 +22,7 @@ setup(
             'torchlars/adaptive_lr.cc',
         ]),
     ],
-    cmdclass={},
+    cmdclass={'build_ext': BuildExtension},
     description='A LARS implementation in PyTorch',
     long_description=long_description,
     long_description_content_type='text/markdown',
