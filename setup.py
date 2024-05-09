@@ -1,5 +1,5 @@
 from setuptools import setup
-from torch.utils.cpp_extension import BuildExtension, CUDAExtension
+from torch.utils.cpp_extension import BuildExtension, Extension
 
 about = {}
 with open('torchlars/__version__.py') as f:
@@ -18,12 +18,11 @@ setup(
     author='Kakao Brain',
     maintainer='Chunmyong Park',
     ext_modules=[
-        CUDAExtension('torchlars._adaptive_lr', [
+        Extension('torchlars._adaptive_lr', [
             'torchlars/adaptive_lr.cc',
-            'torchlars/adaptive_lr_cuda.cu',
         ]),
     ],
-    cmdclass={'build_ext': BuildExtension},
+    cmdclass={},
     description='A LARS implementation in PyTorch',
     long_description=long_description,
     long_description_content_type='text/markdown',
